@@ -109,3 +109,6 @@ C:\Users\Ben Pantazon\Documents\devCodeCamp\ASP.NET\TrashCollector\TrashCollecto
 C:\Users\Ben Pantazon\Documents\devCodeCamp\ASP.NET\TrashCollector\TrashCollector\TrashCollector\obj\Debug\TrashCollector.pdb
 C:\Users\Ben Pantazon\Documents\devCodeCamp\ASP.NET\TrashCollector\TrashCollector\TrashCollector\obj\Debug\TrashCollector.Migrations.Customer.resources
 C:\Users\Ben Pantazon\Documents\devCodeCamp\ASP.NET\TrashCollector\TrashCollector\TrashCollector\obj\Debug\TrashCollector.csproj.GenerateResource.cache
+C:\Users\Ben Pantazon\Documents\devCodeCamp\ASP.NET\TrashCollector\TrashCollector\TrashCollector\obj\Debug\TrashCollector.Migrations.AddIEnumerable.resources
+C:\Users\Ben Pantazon\Documents\devCodeCamp\ASP.NET\TrashCollector\TrashCollector\TrashCollector\obj\Debug\TrashCollector.Migrations.RemoveIEnumerableFromEmployeeAndCustomer.resources
+C:\Users\Ben Pantazon\Documents\devCodeCamp\ASP.NET\TrashCollector\TrashCollector\TrashCollector\obj\Debug\TrashCollector.Migrations.MovedIEnumerablePickupDaysToPlayer.resources

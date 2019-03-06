@@ -11,5 +11,6 @@ namespace TrashCollector.Models
         [Key]
         public int PickupId { get; set; }
         public string Name { get; set; }
+
     }
 }

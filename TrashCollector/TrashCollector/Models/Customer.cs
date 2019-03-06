@@ -21,6 +21,7 @@ namespace TrashCollector.Models
         [ForeignKey("PickupDay")]
         public int PickupId { get; set; }
         public virtual PickupDay PickupDay { get; set; }
+        public IEnumerable<PickupDay> PickupDays { get; set; }
 
         [DisplayName("Extra Pickup")]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-dd}")]
@@ -51,5 +52,7 @@ namespace TrashCollector.Models
         [ForeignKey("ApplicationUser")]
         public string ApplicationUserId { get; set; }
         public ApplicationUser ApplicationUser { get; set; }
+
+        
     }
 }

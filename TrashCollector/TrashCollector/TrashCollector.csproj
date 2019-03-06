@@ -174,6 +174,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -184,6 +185,18 @@
     <Compile Include="Migrations\201903051701173_Customer.cs" />
     <Compile Include="Migrations\201903051701173_Customer.Designer.cs">
       <DependentUpon>201903051701173_Customer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903061430586_AddIEnumerable.cs" />
+    <Compile Include="Migrations\201903061430586_AddIEnumerable.Designer.cs">
+      <DependentUpon>201903061430586_AddIEnumerable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903061439140_RemoveIEnumerableFromEmployeeAndCustomer.cs" />
+    <Compile Include="Migrations\201903061439140_RemoveIEnumerableFromEmployeeAndCustomer.Designer.cs">
+      <DependentUpon>201903061439140_RemoveIEnumerableFromEmployeeAndCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903061635183_MovedIEnumerablePickupDaysToPlayer.cs" />
+    <Compile Include="Migrations\201903061635183_MovedIEnumerablePickupDaysToPlayer.Designer.cs">
+      <DependentUpon>201903061635183_MovedIEnumerablePickupDaysToPlayer.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -255,6 +268,7 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Users\Index.cshtml" />
+    <Content Include="Views\Customer\CreateCustomer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -277,6 +291,15 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201903051701173_Customer.resx">
       <DependentUpon>201903051701173_Customer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903061430586_AddIEnumerable.resx">
+      <DependentUpon>201903061430586_AddIEnumerable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903061439140_RemoveIEnumerableFromEmployeeAndCustomer.resx">
+      <DependentUpon>201903061439140_RemoveIEnumerableFromEmployeeAndCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903061635183_MovedIEnumerablePickupDaysToPlayer.resx">
+      <DependentUpon>201903061635183_MovedIEnumerablePickupDaysToPlayer.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

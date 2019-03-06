@@ -22,5 +22,7 @@ namespace TrashCollector.Models
         [ForeignKey("ApplicationUser")]
         public string ApplicationUserId { get; set; }
         public ApplicationUser ApplicationUser { get; set; }
+
+        
     }
 }
