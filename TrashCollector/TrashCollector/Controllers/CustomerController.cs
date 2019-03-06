@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using TrashCollector.Models;
 using System.Data.Entity;
+using Microsoft.AspNet.Identity;
 
 namespace TrashCollector.Controllers
 {
@@ -38,6 +39,7 @@ namespace TrashCollector.Controllers
             {
                 PickupDays = pickupDays
             };
+            //customer.ApplicationUserId = User.Identity.GetUserId();
             return View(customer);
         }
 

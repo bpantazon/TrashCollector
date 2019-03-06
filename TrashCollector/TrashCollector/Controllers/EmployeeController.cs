@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,39 +11,88 @@ namespace TrashCollector.Controllers
     public class EmployeeController : Controller
     {
         private ApplicationDbContext db;
-        //IList<Customer> customerList = new List<Customer>() { };
-        //IList<Customer> employeesCustomers = new List<Customer>() { };
         public EmployeeController()
         {
             db = new ApplicationDbContext();
         }
-        
         // GET: Employee
-        //get customers from the database for the employee to view
-        public ActionResult Index(Employee employee)
+        public ActionResult Index()
+        {
+            return View();
+        }
+
+        // GET: Employee/Details/5
+        public ActionResult Details(int id)
+        {
+            return View();
+        }
+
+        // GET: Employee/Create
+        public ActionResult CreateEmployee()
+        {
+            return View();
+        }
+
+        // POST: Employee/Create
+        [HttpPost]
+        public ActionResult CreateEmployee(Employee employee)
         {
             try
             {
-                db.Customers.ToList();
-                foreach (var cust in db.Customers)
-                {
-                    //List<Customer> employeesCustomers = db.Customers.Where(c => c.Zip == employee.PickupZip);
-                    //var customer = db.Customers.Where(c => c.Zip == employee.PickupZip);
-
-                    //customerList.Add(cust); //add all customers to a list
-                }
-
-                //try to filter customers that match the employees zip code to a new list that will show to the employee
-                //customerList.Add(customer);
-
-
-
+                // TODO: Add insert logic here
+                db.Employees.Add(employee);
+                employee.ApplicationUserId = User.Identity.GetUserId();
+                db.SaveChanges();
+                return RedirectToAction("Index");
             }
             catch
             {
                 return View();
             }
-            return View(/*customerList*/);
+        }
+
+        // GET: Employee/Edit/5
+        public ActionResult Edit(int id)
+        {
+            return View();
+        }
+
+        // POST: Employee/Edit/5
+        [HttpPost]
+        public ActionResult Edit(int id, FormCollection collection)
+        {
+            try
+            {
+                // TODO: Add update logic here
+
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+        // GET: Employee/Delete/5
+        public ActionResult Delete(int id)
+        {
+            return View();
+        }
+
+        // POST: Employee/Delete/5
+        [HttpPost]
+        public ActionResult Delete(int id, FormCollection collection)
+        {
+            try
+            {
+                // TODO: Add delete logic here
+
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return View();
+            }
         }
     }
 }
