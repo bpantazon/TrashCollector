@@ -35,12 +35,13 @@ namespace TrashCollector.Controllers
         public ActionResult CreateCustomer()
         {
             var pickupDays = db.PickupDays.ToList();
-            Customer customer = new Customer
+            Customer_PickupDayVM customerVM = new Customer_PickupDayVM
             {
-                PickupDays = pickupDays
+                Customer = new Customer(),
+                PickupDay = new PickupDay()
             };
-            //customer.ApplicationUserId = User.Identity.GetUserId();
-            return View(customer);
+            
+            return View(customerVM);
         }
 
         // POST: Customer/Create
@@ -50,6 +51,7 @@ namespace TrashCollector.Controllers
             try
             {
                 // TODO: Add insert logic here
+                customer.ApplicationUserId = User.Identity.GetUserId();
                 db.Customers.Add(customer);
                 db.SaveChanges();
                 return RedirectToAction("Index");

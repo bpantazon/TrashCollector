@@ -179,6 +179,11 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
+    <Compile Include="Migrations\201903070216335_Customer_PickupDayVM.cs" />
+    <Compile Include="Migrations\201903070216335_Customer_PickupDayVM.Designer.cs">
+      <DependentUpon>201903070216335_Customer_PickupDayVM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Customer_PickupDayVM.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -273,6 +278,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="ViewModels\" />
     <Folder Include="Views\Role\" />
   </ItemGroup>
   <ItemGroup>
@@ -300,6 +306,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201903061635183_MovedIEnumerablePickupDaysToPlayer.resx">
       <DependentUpon>201903061635183_MovedIEnumerablePickupDaysToPlayer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903070216335_Customer_PickupDayVM.resx">
+      <DependentUpon>201903070216335_Customer_PickupDayVM.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
