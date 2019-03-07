@@ -52,16 +52,22 @@ namespace TrashCollector.Controllers
         public ActionResult CreateCustomer(Customer customer)
         {
                 // TODO: Add insert logic here    
-            
-            customer.ExtraPickup = null;
-            customer.SuspendStart = null;
-            customer.SuspendEnd = null;
-            db.Customers.Add(customer);
-            customer.ApplicationUserId = User.Identity.GetUserId();
-            db.SaveChanges();
+            try
+            {
+                customer.ExtraPickup = null;
+                customer.SuspendStart = null;
+                customer.SuspendEnd = null;
+                db.Customers.Add(customer);
+                customer.ApplicationUserId = User.Identity.GetUserId();
+                db.SaveChanges();
                 return RedirectToAction("Index");
-           
+            } 
+            catch
+            {
                 return View();
+            }
+           
+               
             
         }
 
@@ -69,7 +75,7 @@ namespace TrashCollector.Controllers
         public ActionResult Edit(int id)
         {
             var customer = db.Customers.Where(c => c.CustomerId == id).FirstOrDefault();
-            return View();
+            return View(customer);
         }
 
         // POST: Customer/Edit/5

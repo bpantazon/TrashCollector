@@ -168,14 +168,14 @@ namespace TrashCollector.Controllers
                     // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
 
                     await this.UserManager.AddToRoleAsync(user.Id, model.UserRoles);
-                    //if (model.UserRoles == "Employee")
-                    //{
-                    //    return RedirectToAction("CreateEmployee", "Employee");
-                    //}
-                    //else if (model.UserRoles == "Customer")
-                    //{
-                    //    return RedirectToAction("CreateCustomer", "Customer");
-                    //}
+                    if (model.UserRoles == "Employee")
+                    {
+                        return RedirectToAction("CreateEmployee", "Employee");
+                    }
+                    else if (model.UserRoles == "Customer")
+                    {
+                        return RedirectToAction("CreateCustomer", "Customer");
+                    }
 
                     return RedirectToAction("Index", "Home");
                 }
