@@ -71,17 +71,27 @@ namespace TrashCollector.Controllers
         // GET: Customer/Edit/5
         public ActionResult Edit(int id)
         {
+            var customer = db.Customers.Where(c => c.CustomerId == id).FirstOrDefault();
             return View();
         }
 
         // POST: Customer/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(int id, Customer customer)
         {
             try
             {
                 // TODO: Add update logic here
+                var updatedCustomer = db.Customers.Where(c => c.CustomerId == id).Single();
 
+                updatedCustomer.FirstName = customer.FirstName;
+                updatedCustomer.LastName = customer.LastName;
+                updatedCustomer.DayForPickup = customer.DayForPickup;
+                updatedCustomer.ExtraPickup = customer.ExtraPickup;
+                updatedCustomer.SuspendStart = customer.SuspendStart;
+                updatedCustomer.SuspendEnd = customer.SuspendEnd;
+
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
             catch
