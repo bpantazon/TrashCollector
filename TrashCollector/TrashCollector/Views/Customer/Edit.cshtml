@@ -52,7 +52,7 @@
             @Html.LabelFor(model => model.ExtraPickupConfirmed, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 <div class="checkbox">
-                    @Html.EditorFor(model => model.ExtraPickupConfirmed)
+                    @Html.DisplayFor(model => model.ExtraPickupConfirmed)
                     @Html.ValidationMessageFor(model => model.ExtraPickupConfirmed, "", new { @class = "text-danger" })
                 </div>
             </div>
@@ -61,7 +61,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Balance, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Balance, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.DisplayFor(model => model.Balance, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Balance, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -70,7 +70,7 @@
             @Html.LabelFor(model => model.PickupConfirmed, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 <div class="checkbox">
-                    @Html.EditorFor(model => model.PickupConfirmed)
+                    @Html.DisplayFor(model => model.PickupConfirmed)
                     @Html.ValidationMessageFor(model => model.PickupConfirmed, "", new { @class = "text-danger" })
                 </div>
             </div>
