@@ -18,10 +18,7 @@ namespace TrashCollector.Models
         public string LastName { get; set; }
 
         [DisplayName("Pickup Day")]
-        [ForeignKey("PickupDay")]
-        public int PickupId { get; set; }
-        public virtual PickupDay PickupDay { get; set; }
-        public IEnumerable<PickupDay> PickupDays { get; set; }
+        public string DayForPickup { get; set; }      
 
         [DisplayName("Extra Pickup")]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-dd}")]

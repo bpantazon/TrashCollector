@@ -31,10 +31,10 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.PickupDay.PickupId, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Customer.DayForPickup, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownListFor(model => model.PickupDay.PickupId, new SelectList(Model.PickupDay.Name, "PickupId", "Name"), "", new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.PickupDay.PickupId, "", new { @class = "text-danger" })
+                @Html.EditorFor(m => m.Customer.DayForPickup, "Enter Pickup Day", new {@class = "form-control"})
+                @Html.ValidationMessageFor(model => model.Customer.DayForPickup, "", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -87,10 +87,10 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Zip, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Customer.Zip, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Zip, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Zip, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.Customer.Zip, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Customer.Zip, "", new { @class = "text-danger" })
             </div>
         </div>
 

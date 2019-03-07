@@ -7,6 +7,7 @@ using TrashCollector.Models;
 using System.Data.Entity;
 using Microsoft.AspNet.Identity;
 
+
 namespace TrashCollector.Controllers
 {
     public class CustomerController : Controller
@@ -20,25 +21,27 @@ namespace TrashCollector.Controllers
         // GET: Customer
         public ActionResult Index()
         {
-            var customers = db.Customers.Include(c => c.PickupDay).ToList();
+            var customers = db.Customers.ToList();
             return View(customers);
         }
 
         // GET: Customer/Details/5
         public ActionResult Details(int id)
         {
-            var customer = db.Customers.Include(c => c.PickupDay).SingleOrDefault(c => c.CustomerId == id);
+            var customer = db.Customers.FirstOrDefault(c => c.CustomerId == id);
             return View(customer);
         }
 
         // GET: Customer/Create
         public ActionResult CreateCustomer()
         {
-            var pickupDays = db.PickupDays.ToList();
+            //var pickupDays = db.PickupDays.ToList();
+           
             Customer_PickupDayVM customerVM = new Customer_PickupDayVM
             {
                 Customer = new Customer(),
-                PickupDay = new PickupDay()
+                //PickupDaysList = new SelectList(pickupDays)
+                //PickupDay = new PickupDay()
             };
             
             return View(customerVM);
@@ -52,6 +55,9 @@ namespace TrashCollector.Controllers
             {
                 // TODO: Add insert logic here
                 customer.ApplicationUserId = User.Identity.GetUserId();
+                
+                //var custPickupDay = db.PickupDays.Where(p => p.Name == customer.PickupDay.Name);
+                //customer.PickupId = custPickupDay.PickupId;
                 db.Customers.Add(customer);
                 db.SaveChanges();
                 return RedirectToAction("Index");

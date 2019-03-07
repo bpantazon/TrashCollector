@@ -40,8 +40,9 @@ namespace TrashCollector.Controllers
             try
             {
                 // TODO: Add insert logic here
+                
+                db.Employees.Add(employee);
                 employee.ApplicationUserId = User.Identity.GetUserId();
-                db.Employees.Add(employee);               
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
