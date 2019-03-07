@@ -28,8 +28,13 @@ namespace TrashCollector.Controllers
         // GET: Customer/Details/5
         public ActionResult Details(int id)
         {
-            var customer = db.Customers.FirstOrDefault(c => c.CustomerId == id);
-            return View(customer);
+
+            Customer_PickupDayVM customerVM = new Customer_PickupDayVM
+            {
+                Customer = db.Customers.Where(c => c.CustomerId == id).FirstOrDefault()
+            };
+            
+            return View(customerVM);
         }
 
         // GET: Customer/Create

@@ -11,120 +11,113 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.FirstName)
+            @Html.DisplayNameFor(model => model.Customer.FirstName)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.FirstName)
+            @Html.DisplayFor(model => model.Customer.FirstName)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.LastName)
+            @Html.DisplayNameFor(model => model.Customer.LastName)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.LastName)
+            @Html.DisplayFor(model => model.Customer.LastName)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.DayForPickup)
+            @Html.DisplayNameFor(model => model.Customer.DayForPickup)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.DayForPickup)
+            @Html.DisplayFor(model => model.Customer.DayForPickup)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.ExtraPickup)
+            @Html.DisplayNameFor(model => model.Customer.ExtraPickup)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.ExtraPickup)
+            @Html.DisplayFor(model => model.Customer.ExtraPickup)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.ExtraPickupConfirmed)
+            @Html.DisplayNameFor(model => model.Customer.ExtraPickupConfirmed)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.ExtraPickupConfirmed)
+            @Html.DisplayFor(model => model.Customer.ExtraPickupConfirmed)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Balance)
+            @Html.DisplayNameFor(model => model.Customer.Balance)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Balance)
+            @Html.DisplayFor(model => model.Customer.Balance)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.PickupConfirmed)
+            @Html.DisplayNameFor(model => model.Customer.PickupConfirmed)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.PickupConfirmed)
+            @Html.DisplayFor(model => model.Customer.PickupConfirmed)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.SuspendStart)
+            @Html.DisplayNameFor(model => model.Customer.SuspendStart)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.SuspendStart)
+            @Html.DisplayFor(model => model.Customer.SuspendStart)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.SuspendEnd)
+            @Html.DisplayNameFor(model => model.Customer.SuspendEnd)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.SuspendEnd)
+            @Html.DisplayFor(model => model.Customer.SuspendEnd)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.StreetAddress)
+            @Html.DisplayNameFor(model => model.Customer.StreetAddress)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.StreetAddress)
+            @Html.DisplayFor(model => model.Customer.StreetAddress)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.City)
+            @Html.DisplayNameFor(model => model.Customer.City)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.City)
+            @Html.DisplayFor(model => model.Customer.City)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.State)
+            @Html.DisplayNameFor(model => model.Customer.State)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.State)
+            @Html.DisplayFor(model => model.Customer.State)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Zip)
+            @Html.DisplayNameFor(model => model.Customer.Zip)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Zip)
+            @Html.DisplayFor(model => model.Customer.Zip)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ApplicationUserId)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ApplicationUserId)
-        </dd>
 
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.CustomerId }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Customer.CustomerId }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
