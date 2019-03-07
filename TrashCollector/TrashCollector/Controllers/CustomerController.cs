@@ -51,21 +51,18 @@ namespace TrashCollector.Controllers
         [HttpPost]
         public ActionResult CreateCustomer(Customer customer)
         {
-            try
-            {
-                // TODO: Add insert logic here
-                customer.ApplicationUserId = User.Identity.GetUserId();
-                
-                //var custPickupDay = db.PickupDays.Where(p => p.Name == customer.PickupDay.Name);
-                //customer.PickupId = custPickupDay.PickupId;
-                db.Customers.Add(customer);
-                db.SaveChanges();
+                // TODO: Add insert logic here    
+            
+            customer.ExtraPickup = null;
+            customer.SuspendStart = null;
+            customer.SuspendEnd = null;
+            db.Customers.Add(customer);
+            customer.ApplicationUserId = User.Identity.GetUserId();
+            db.SaveChanges();
                 return RedirectToAction("Index");
-            }
-            catch
-            {
+           
                 return View();
-            }
+            
         }
 
         // GET: Customer/Edit/5

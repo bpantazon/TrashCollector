@@ -183,6 +183,10 @@
     <Compile Include="Migrations\201903071733383_NewDatabase.Designer.cs">
       <DependentUpon>201903071733383_NewDatabase.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201903072121062_NullableDateTime.cs" />
+    <Compile Include="Migrations\201903072121062_NullableDateTime.Designer.cs">
+      <DependentUpon>201903072121062_NullableDateTime.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Customer_PickupDayVM.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -260,7 +264,6 @@
     <Content Include="Views\Customer\CreateCustomer.cshtml" />
     <Content Include="Views\Employee\CreateEmployee.cshtml" />
     <Content Include="Views\Customer\Details.cshtml" />
-    <Content Include="Views\Employee\Index.cshtml" />
     <Content Include="Views\Customer\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -284,6 +287,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201903071733383_NewDatabase.resx">
       <DependentUpon>201903071733383_NewDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903072121062_NullableDateTime.resx">
+      <DependentUpon>201903072121062_NullableDateTime.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -30,7 +30,8 @@ namespace TrashCollector.Controllers
         // GET: Employee/Create
         public ActionResult CreateEmployee()
         {
-            return View();
+            Employee employee = new Employee();
+            return View(employee);
         }
 
         // POST: Employee/Create

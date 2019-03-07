@@ -22,7 +22,16 @@ namespace TrashCollector.Models
 
         [DisplayName("Extra Pickup")]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-dd}")]
-        public DateTime ExtraPickup { get; set; }
+        public DateTime? ExtraPickup { get; set; }
+        //{
+        //    get
+        //    {
+        //        return this.ExtraPickup.HasValue
+        //            ? this.ExtraPickup.Value : DateTime.Now;
+        //    }
+        //    set { this.ExtraPickup = value; }
+        //}
+        //private DateTime? PickupDate = null;
 
         public bool ExtraPickupConfirmed { get; set; }
 
@@ -32,11 +41,11 @@ namespace TrashCollector.Models
 
         [DisplayName("Suspend Start")]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-dd}")]
-        public DateTime SuspendStart { get; set; }
+        public DateTime? SuspendStart{ get; set; }
 
         [DisplayName("Suspend End")]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-dd}")]
-        public DateTime SuspendEnd { get; set; }
+        public DateTime? SuspendEnd { get; set; }
 
         public string StreetAddress { get; set; }
 
