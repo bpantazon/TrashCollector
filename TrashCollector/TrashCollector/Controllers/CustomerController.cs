@@ -19,10 +19,10 @@ namespace TrashCollector.Controllers
         }
         
         // GET: Customer
-        public ActionResult Index()
+        public ActionResult Index(Customer customer)
         {
-            var customers = db.Customers.ToList();
-            return View(customers);
+            
+            return View();
         }
 
         // GET: Customer/Details/5
