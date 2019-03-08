@@ -16,15 +16,25 @@ namespace TrashCollector.Controllers
             db = new ApplicationDbContext();
         }
         // GET: Employee
-        public ActionResult Index()
+        public ActionResult Index(int id)
         {
-            return View();
+            Employee_CustomerVM employeeVM = new Employee_CustomerVM
+            {
+                CurrentEmployee = db.Employees.Where(e => e.EmployeeId == id).FirstOrDefault(),
+                Customer = db.Customers.Where(c => c.Zip == db.Employees.Where(e => e.EmployeeId == id).FirstOrDefault().PickupZip).FirstOrDefault()
+            };
+            return View(employeeVM);
         }
 
         // GET: Employee/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            Employee_CustomerVM employeeVM = new Employee_CustomerVM
+            {
+                CurrentEmployee = db.Employees.Where(e => e.EmployeeId == id).FirstOrDefault(),
+                Customer = db.Customers.Where(c => c.Zip == db.Employees.Where(e => e.EmployeeId == id).FirstOrDefault().PickupZip).FirstOrDefault()
+            };
+            return View(employeeVM);
         }
 
         // GET: Employee/Create
