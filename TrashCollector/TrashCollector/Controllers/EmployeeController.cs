@@ -20,7 +20,7 @@ namespace TrashCollector.Controllers
         {
             var user = User.Identity.GetUserId();
             var emp = db.Employees.Where(s => s.ApplicationUserId == user).Single();
-            DayOfWeek today = DateTime.Today.DayOfWeek;           
+            DayOfWeek today = DateTime.Today.DayOfWeek; 
             var customers = db.Customers.Where(c => c.Zip == emp.PickupZip && c.DayForPickup == today.ToString()).ToList();
             return View(customers);
         }
@@ -28,12 +28,13 @@ namespace TrashCollector.Controllers
         // GET: Employee/Details/5
         public ActionResult Details(int id)
         {
-            Employee_CustomerVM employeeVM = new Employee_CustomerVM
-            {
-                CurrentEmployee = db.Employees.Where(e => e.EmployeeId == id).FirstOrDefault(),
-                Customer = db.Customers.Where(c => c.Zip == db.Employees.Where(e => e.EmployeeId == id).FirstOrDefault().PickupZip).FirstOrDefault()
-            };
-            return View(employeeVM);
+
+            //Employee_CustomerVM employeeVM = new Employee_CustomerVM
+            //{
+            //    CurrentEmployee = db.Employees.Where(e => e.EmployeeId == id).FirstOrDefault(),
+            //    Customer = db.Customers.Where(c => c.Zip == db.Employees.Where(e => e.EmployeeId == id).FirstOrDefault().PickupZip).FirstOrDefault()
+            //};
+            return View();
         }
 
         // GET: Employee/Create
@@ -53,7 +54,7 @@ namespace TrashCollector.Controllers
                 db.Employees.Add(employee);
                 employee.ApplicationUserId = User.Identity.GetUserId();
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("EmployeeIndex");
             }
             catch
             {
@@ -101,7 +102,7 @@ namespace TrashCollector.Controllers
                 
                 
                 //db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("EmployeeIndex");
             }
             catch
             {
