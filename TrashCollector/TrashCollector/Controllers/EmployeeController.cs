@@ -16,14 +16,13 @@ namespace TrashCollector.Controllers
             db = new ApplicationDbContext();
         }
         // GET: Employee
-        public ActionResult Index(int id)
+        public ActionResult EmployeeIndex()
         {
-            Employee_CustomerVM employeeVM = new Employee_CustomerVM
-            {
-                CurrentEmployee = db.Employees.Where(e => e.EmployeeId == id).FirstOrDefault(),
-                Customer = db.Customers.Where(c => c.Zip == db.Employees.Where(e => e.EmployeeId == id).FirstOrDefault().PickupZip).FirstOrDefault()
-            };
-            return View(employeeVM);
+            var user = User.Identity.GetUserId();
+            var emp = db.Employees.Where(s => s.ApplicationUserId == user).Single();
+            DayOfWeek today = DateTime.Today.DayOfWeek;           
+            var customers = db.Customers.Where(c => c.Zip == emp.PickupZip && c.DayForPickup == today.ToString()).ToList();
+            return View(customers);
         }
 
         // GET: Employee/Details/5
@@ -50,8 +49,7 @@ namespace TrashCollector.Controllers
         {
             try
             {
-                // TODO: Add insert logic here
-                
+                // TODO: Add insert logic here              
                 db.Employees.Add(employee);
                 employee.ApplicationUserId = User.Identity.GetUserId();
                 db.SaveChanges();
@@ -59,24 +57,50 @@ namespace TrashCollector.Controllers
             }
             catch
             {
-                return View();
+                return View();  
             }
         }
 
         // GET: Employee/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            try
+            {
+                var editedCustomer = db.Customers.Where(c => c.CustomerId == id).SingleOrDefault();
+                return View(editedCustomer);
+            }
+            catch
+            {
+                return View();
+            }
+           
         }
 
         // POST: Employee/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(int id, Customer customer)
         {
             try
             {
                 // TODO: Add update logic here
+                var editedCustomer = db.Customers.Where(c => c.CustomerId == id).SingleOrDefault();
+                editedCustomer.PickupConfirmed = customer.PickupConfirmed;
+                if (editedCustomer.PickupConfirmed == true)
+                {
+                    editedCustomer.Balance = customer.Balance + 25.00m;                   
+                }
+                
+                editedCustomer.ExtraPickupConfirmed = customer.ExtraPickupConfirmed;
+                if (editedCustomer.ExtraPickupConfirmed == true)
+                {
+                    editedCustomer.Balance = customer.Balance + 20.00m;
+                    
+                }
 
+                db.SaveChanges();
+                //editedCustomer.PickupConfirmed = false;
+                //editedCustomer.ExtraPickupConfirmed = false;
+                //db.SaveChanges();
                 return RedirectToAction("Index");
             }
             catch

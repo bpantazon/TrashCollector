@@ -19,7 +19,7 @@ namespace TrashCollector.Controllers
         }
         
         // GET: Customer
-        public ActionResult Index(Customer customer)
+        public ActionResult Index()
         {
             
             return View();
@@ -28,28 +28,15 @@ namespace TrashCollector.Controllers
         // GET: Customer/Details/5
         public ActionResult Details(int id)
         {
-
-            Customer_PickupDayVM customerVM = new Customer_PickupDayVM
-            {
-                Customer = db.Customers.Where(c => c.CustomerId == id).FirstOrDefault()
-            };
-            
-            return View(customerVM);
+            var customer = db.Customers.Where(c => c.CustomerId == id).FirstOrDefault();
+                       
+            return View(customer);
         }
 
         // GET: Customer/Create
         public ActionResult CreateCustomer()
-        {
-            //var pickupDays = db.PickupDays.ToList();
-           
-            Customer_PickupDayVM customerVM = new Customer_PickupDayVM
-            {
-                Customer = new Customer(),
-                //PickupDaysList = new SelectList(pickupDays)
-                //PickupDay = new PickupDay()
-            };
-            
-            return View(customerVM);
+        {           
+            return View();
         }
 
         // POST: Customer/Create
@@ -70,10 +57,7 @@ namespace TrashCollector.Controllers
             catch
             {
                 return View();
-            }
-           
-               
-            
+            }           
         }
 
         // GET: Customer/Edit/5
