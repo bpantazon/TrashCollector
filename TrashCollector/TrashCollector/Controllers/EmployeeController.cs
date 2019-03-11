@@ -87,19 +87,19 @@ namespace TrashCollector.Controllers
                 editedCustomer.PickupConfirmed = customer.PickupConfirmed;
                 if (editedCustomer.PickupConfirmed == true)
                 {
-                    editedCustomer.Balance = customer.Balance + 25.00m;                   
+                    editedCustomer.Balance = editedCustomer.Balance + 25.00m;                    
                 }
                 
                 editedCustomer.ExtraPickupConfirmed = customer.ExtraPickupConfirmed;
                 if (editedCustomer.ExtraPickupConfirmed == true)
                 {
-                    editedCustomer.Balance = customer.Balance + 20.00m;
-                    
+                    editedCustomer.Balance = editedCustomer.Balance + 20.00m;                   
                 }
-
+                editedCustomer.PickupConfirmed = false;
+                editedCustomer.ExtraPickupConfirmed = false;
                 db.SaveChanges();
-                //editedCustomer.PickupConfirmed = false;
-                //editedCustomer.ExtraPickupConfirmed = false;
+                
+                
                 //db.SaveChanges();
                 return RedirectToAction("Index");
             }
