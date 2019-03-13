@@ -187,6 +187,14 @@
     <Compile Include="Migrations\201903072121062_NullableDateTime.Designer.cs">
       <DependentUpon>201903072121062_NullableDateTime.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201903112053530_IEnumerableDays.cs" />
+    <Compile Include="Migrations\201903112053530_IEnumerableDays.Designer.cs">
+      <DependentUpon>201903112053530_IEnumerableDays.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903112124303_Remove IEnumerableDays.cs" />
+    <Compile Include="Migrations\201903112124303_Remove IEnumerableDays.Designer.cs">
+      <DependentUpon>201903112124303_Remove IEnumerableDays.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Customer_PickupDayVM.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -264,10 +272,11 @@
     <Content Include="Views\Employee\CreateEmployee.cshtml" />
     <Content Include="Views\Customer\Details.cshtml" />
     <Content Include="Views\Customer\Edit.cshtml" />
-    <Content Include="Views\Customer\Index.cshtml" />
     <Content Include="Views\Employee\Edit.cshtml" />
     <Content Include="Views\Employee\EmployeeIndex.cshtml" />
     <Content Include="Views\Employee\Details.cshtml" />
+    <Content Include="Views\Employee\Monday.cshtml" />
+    <Content Include="Views\Customer\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -293,6 +302,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201903072121062_NullableDateTime.resx">
       <DependentUpon>201903072121062_NullableDateTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903112053530_IEnumerableDays.resx">
+      <DependentUpon>201903112053530_IEnumerableDays.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903112124303_Remove IEnumerableDays.resx">
+      <DependentUpon>201903112124303_Remove IEnumerableDays.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

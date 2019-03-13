@@ -20,8 +20,10 @@ namespace TrashCollector.Controllers
         {
             var user = User.Identity.GetUserId();
             var emp = db.Employees.Where(s => s.ApplicationUserId == user).Single();
-            DayOfWeek today = DateTime.Today.DayOfWeek; 
+            DayOfWeek today = DateTime.Today.DayOfWeek;
+            var currentDate = DateTime.Today;
             var customers = db.Customers.Where(c => c.Zip == emp.PickupZip && c.DayForPickup == today.ToString()).ToList();
+ 
             return View(customers);
         }
 
@@ -29,11 +31,6 @@ namespace TrashCollector.Controllers
         public ActionResult Details(int id)
         {
 
-            //Employee_CustomerVM employeeVM = new Employee_CustomerVM
-            //{
-            //    CurrentEmployee = db.Employees.Where(e => e.EmployeeId == id).FirstOrDefault(),
-            //    Customer = db.Customers.Where(c => c.Zip == db.Employees.Where(e => e.EmployeeId == id).FirstOrDefault().PickupZip).FirstOrDefault()
-            //};
             return View();
         }
 
@@ -41,6 +38,7 @@ namespace TrashCollector.Controllers
         public ActionResult CreateEmployee()
         {
             Employee employee = new Employee();
+          
             return View(employee);
         }
 
@@ -125,6 +123,20 @@ namespace TrashCollector.Controllers
                 // TODO: Add delete logic here
 
                 return RedirectToAction("Index");
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+        // GET: Employee/Monday
+        public ActionResult Monday()
+        {
+            try
+            {
+
+                return View();
             }
             catch
             {

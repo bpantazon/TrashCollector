@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace TrashCollector.Models
 {
@@ -23,15 +24,6 @@ namespace TrashCollector.Models
         [DisplayName("Extra Pickup")]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-dd}")]
         public DateTime? ExtraPickup { get; set; }
-        //{
-        //    get
-        //    {
-        //        return this.ExtraPickup.HasValue
-        //            ? this.ExtraPickup.Value : DateTime.Now;
-        //    }
-        //    set { this.ExtraPickup = value; }
-        //}
-        //private DateTime? PickupDate = null;
 
         public bool ExtraPickupConfirmed { get; set; }
 
